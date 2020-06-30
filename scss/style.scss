@@ -1,0 +1,231 @@
+@import './basic/reset.scss';
+@import './basic/fonts.scss';
+@import './modules/variables.scss';
+@import './modules/classes.scss';
+@import './modules/mixins.scss';
+ 
+body{
+    background: $body-color;
+    font-family: $font-nino;
+    //Header
+    header{
+        width: $percent100;
+        height: 80px;
+        display: $flex;
+        background: $header-color;
+        //check
+        // position: $fixed;
+        top: 0;
+        left: 0;
+        margin-bottom: $margin03;
+        //check 
+        @include flex-property(row, space-between);
+        padding: 0 20px;
+        .menu{
+            .burger-icon{
+                font-size: 1.5em;
+            }
+            height: $percent100;
+            display: $flex;
+            @include flex-property(row, flex-start);
+            @include flex-align(center, center);
+            .menu-options{
+                margin-left: 35px;
+                display: $flex;
+                >div{
+                    margin-right: 10px;
+                }
+                >div >a{
+                    margin-right: $margin-5;
+                }
+                .menu-contact{
+                    display: $flex;
+                    @include flex-align(center, center);
+                }
+            }
+        }
+        .logo{
+            img{
+                margin-bottom: $margin-5;
+            }
+            display: $flex;
+            @include flex-property(column, flex-start);
+            @include flex-align(center, center);
+        }
+        .options{
+            >div{
+                margin: 0 20px;
+            }
+            display: $flex;
+            @include flex-property(row, space-between);
+            @include flex-align(center, center);
+            .cart{
+                width : 76px;
+                height: $percent100;
+                background: $yellow-color;
+                display: $flex;
+                @include flex-align(center, center);
+                img{
+                    width: 20px;
+                }
+            }
+            .sign{
+                display: $flex;
+                @include flex-align(center, center);
+                img{
+                    margin-right: $margin-5;
+                    width: 20px;
+                }
+            }
+        }
+    }
+    //main
+    main{
+        width: $percent90;
+        margin: auto;
+        .slider{
+            width: $percent100;
+            margin-bottom: $margin03;
+            display: $flex;
+            .left{
+                margin-right: 1%;
+                box-shadow: 0 0 20px $color-shadow;
+            }
+            .right{
+                width: 100%/2;
+                display: $flex;
+                height: $percent100;
+                .first{
+                    margin-right: 1%;
+                }
+                >div{
+                    box-shadow: 0 0 20px $color-shadow;
+                }
+            }
+        }
+        .posts{
+            width: $percent100;
+            display: $flex;
+            margin-bottom: $margin03*2;
+            @include flex-property(row, space-between);
+            .post{
+                width: 100%/3;
+                margin-right: $margin02;
+                height: $percent100;
+                box-shadow: 0 0 20px $color-shadow;
+                border-radius: 40px 40px 0 0;
+                &:last-child{
+                    margin-right: 0;
+                }
+                img{
+                    height: 80%;
+                }
+                .card{
+                    width: $percent100;
+                    @include position(relative);
+                    border-radius: 40px 40px 0 0;
+                    .imageover{
+                        width: $percent100;
+                        display: $flex;
+                        @include flex-property(row, space-between);
+                        @include position(absolute);
+                        @include position-change(8%, 0);
+                        z-index: 10;
+                        .left-div{
+                            display: $flex;
+                            @include flex-align(center, center);
+                            .rect{
+                                width: 3px;
+                                height: 50px;
+                                background: $yellow-color;
+                                margin-right: $margin-5;
+                            }
+                            .text{
+                                .text-p{
+                                    font-family: $font-phone;
+                                    font-size: $font-16;
+                                    margin-bottom: $margin-5;
+                                }
+                                .text-p2{
+                                    font-size: $font-12;
+                                    color: $color-gray;
+                                }
+                            }
+                        }
+                        .right-div{
+                            img{
+                                height: $percent60;
+                                margin-right: $margin-5;
+                            }
+                        }
+                    }
+                    .card-slider{
+                        width: $percent100;
+                        .carousel{
+                            width: $percent100;
+                        }
+                    }
+                    .card-body{
+                        display: $flex;
+                        padding: 1rem;
+                        h3{
+                            font-family: $font-phone;
+                            font-size: $font-16;
+                        }
+                        h6{
+                            font-size: $font-14;
+                            color: $color-gray;
+                        }
+                        .price{
+                            display: $flex;
+                            @include flex-property(column, space-between);
+                            p{
+                                color: $color-gray;
+                                &:nth-child(2){
+                                    color: $yellow-color;
+                                }
+                                text-align: end;
+                            }
+                            .price-p{
+                                &::before{
+                                    content: '487ლ ';
+                                    color: $color-gray;
+                                    text-decoration: line-through;
+                                    text-decoration-color: $yellow-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    .banner{
+        width: $percent100;
+        margin-bottom: $margin03*2;
+        .banner-content{
+            @include position(relative);
+            .banner-text{
+                width: 40%;
+                text-align: center;
+                h2{
+                    font-size: $font-45;
+                    color: $header-color;
+                    margin-bottom: $margin02;
+                }
+                .type-buttons{
+                    display: $flex;
+                    @include flex-property(row, space-between);
+                    button{
+                        background: $header-color;
+                    }
+                }
+                @include position(absolute);
+                @include position-change(50%, 50%);
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+    }
+}
