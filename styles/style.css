@@ -81,7 +81,7 @@ body {
     margin-bottom: 30px;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 20px; }
+    padding-left: 20px; }
     body header .menu {
       height: 100%;
       display: flex;
@@ -116,7 +116,7 @@ body {
       justify-content: space-between;
       justify-content: center;
       align-items: center; }
-      body header .options > div {
+      body header .options > div:not(#cart) {
         margin: 0 20px; }
       body header .options .cart {
         width: 76px;
@@ -249,3 +249,61 @@ body {
           justify-content: space-between; }
           body .banner .banner-content .banner-text .type-buttons button {
             background: white; }
+      body .banner .banner-content img {
+        width: 100%; }
+  body .text p {
+    font-size: 29px;
+    text-align: center; }
+  body .post-slider-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    background: white; }
+    body .post-slider-section .events-slider {
+      width: 100%;
+      height: 530px; }
+      body .post-slider-section .events-slider .post-slider {
+        width: 100%;
+        display: inline-block;
+        padding: 0 10px; }
+        body .post-slider-section .events-slider .post-slider .next, body .post-slider-section .events-slider .post-slider .prev {
+          font-size: 2em;
+          color: #FEC21E; }
+        body .post-slider-section .events-slider .post-slider .post-wrapper {
+          width: 90%;
+          height: 400px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin: 0 auto;
+          overflow: hidden; }
+          body .post-slider-section .events-slider .post-slider .post-wrapper .post {
+            width: 30%;
+            height: 100%;
+            margin: 0 10px; }
+            body .post-slider-section .events-slider .post-slider .post-wrapper .post .card {
+              position: relative; }
+              body .post-slider-section .events-slider .post-slider .post-wrapper .post .card .post-imageover {
+                width: 100%;
+                background: rgba(255, 204, 204, 0.3);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 80%;
+                left: 0;
+                color: white; }
+                body .post-slider-section .events-slider .post-slider .post-wrapper .post .card .post-imageover .post-rect {
+                  width: 14px;
+                  height: 50px;
+                  background: #FEC21E;
+                  margin-right: 5px; }
+    body .post-slider-section .yellow-rect {
+      width: 200px;
+      height: 5px;
+      background: #FEC21E; }
