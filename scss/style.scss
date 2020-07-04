@@ -242,9 +242,9 @@ body{
         @include flex-property(column, space-between);
         @include flex-align(flex-start, center);
         background: $header-color;
+        box-shadow: 0 0 20px $color-shadow;
         .events-slider{
             width: 100%;
-            height: 530px;
             .post-slider{
                 width: 100%;
                 display: inline-block;
@@ -294,6 +294,75 @@ body{
             height: 5px;
             background: $yellow-color;
             
+        }
+    }
+    .one-slider{
+        width: $percent100;
+        .post-wrapper{
+            width: $percent60;
+            display: inline-block;
+            overflow: hidden;
+            .one-post{
+                width: $percent100;
+                height: 250px;
+                display: inline-block;
+                background: red;
+                margin: auto;
+            }
+        }
+    }
+    .input{
+        width: $percent90;
+        margin: auto;
+        margin-top: $margin03;
+        margin-bottom: $margin03;
+        display: $flex;
+        @include flex-property(row, space-between);
+        .form-control{
+            height: 50px;
+            &::placeholder{
+                color: $input-text-color;
+            }
+        }
+        #basic-addon2{
+            background: $yellow-color;
+            color: $header-color;
+        }
+        .input-group{
+            width: $percent95;
+            box-shadow: 0 0 20px $color-shadow;
+        }
+        .up-arrow{
+            background: $header-color;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: $flex;
+            @include flex-align(center, center);
+            box-shadow: 0 0 20px $color-shadow;
+        }
+    }
+    footer{
+        background: $header-color;
+        display: $flex;
+        height: 200px;
+        padding: 20px 40px;
+        @include flex-property(row, space space-between);
+        >div{
+            width: 50%;
+        }
+        .social-networks{
+            display: $flex;
+            @include flex-align(center, flex-start);
+        }
+        .contact{
+            display: $flex;
+            @include flex-property(column, space-between);
+            @include flex-align(flex-start, flex-end);
+            p{
+                font-size: $font-12;
+                color: $input-text-color;
+            }
         }
     }
 }
