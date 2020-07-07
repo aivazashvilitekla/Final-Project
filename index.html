@@ -14,24 +14,81 @@
     <header>
         <div class="menu">
             <div class="burger-icon">
-                <i class="fa fa-bars" aria-hidden="true"></i>
+                <!-- <a href="#" onclick="openMenu()" id="burgerIcon"><i class="fa fa-bars" aria-hidden="true"></i></a> -->
             </div>
             <div class="menu-options">
-                <div class="menu-aboutUs">
-                    <a href="#" class="about">ჩვენ შესახებ</a>
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <!--Navbar-->
+              <nav class="navbar navbar-light light-blue lighten-4">
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20" aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+                  <div class="animated-icon1"><span></span><span></span><span></span></div>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+
+                  <!-- Links -->
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                  </ul>
+                  <!-- Links -->
+
                 </div>
-                <div class="menu-news">
-                    <a href="#" class="about">სიახლეები</a>
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </div>
-                <div class="menu-shops">
-                    <a href="#" class="about">მაღაზიები</a>
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </div>
-                <div class="menu-contact">
-                    <a href="#" class="about">კონტაქტი</a>
-                </div>
+                <!-- Collapsible content -->
+                
+                </nav>
+              <!--/.Navbar-->
+              <ul class="navbar-nav menu-content">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle a-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ჩვენ შესახებ
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    სიახლეები
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    მაღაზიები
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    კონტაქტი
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
             </div>
         </div> 
         <div class="logo">
@@ -365,6 +422,13 @@
       </div>
       <div class="social-networks">
         <h3>სოციალური ქსელი</h3>
+        <div class="icons">
+          <img src="images/fb.svg" alt="icon">
+          <img src="images/insta.svg" alt="icon">
+          <img src="images/youtube.svg" alt="icon">
+          <img src="images/twitter.svg" alt="icon">
+          <img src="images/vimeo.svg" alt="icon">
+        </div>
       </div>
       <div class="contact">
         <div class="working-hours">
