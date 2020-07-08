@@ -1,0 +1,61 @@
+
+@media (max-width: 1200px){
+
+}
+
+@media (max-width: 1024px){
+    body{
+        main{
+            .slider{
+                flex-wrap: wrap;
+                display: block;
+                .left{
+                    margin-bottom: $margin-bottom10;
+                }
+            }
+            .first, .second{
+                width: 49%;
+            }
+            .posts{
+                flex-wrap: wrap;
+                display: block;
+                .post{
+                    margin-bottom: $margin-bottom10;
+                }
+            }
+            
+        }
+        .banner{
+            .banner-content{
+                .banner-text{
+                    h2{
+                        font-size: $font-29;
+                    }
+                    button{
+                        margin: $margin-5;
+                    }
+                }
+            }
+        }
+        .input{
+            .input-group{
+                margin-right: $margin-5;
+            }
+        }
+        .post-slider-section{
+            .post-imageover{
+                top: 60%;
+                p{
+                    font-size: $font-14;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1000px){
+}
+@media (max-width: 768px){
+
+}
