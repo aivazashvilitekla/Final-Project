@@ -5,13 +5,8 @@
 @import './modules/mixins.scss';
  
 
-
-
-
-
-
-
 body{
+    
     background: $body-color;
     font-family: $font-nino;
     //Header
@@ -21,14 +16,56 @@ body{
         display: $flex;
         background: $header-color;
         //check
-        // position: $fixed;
+        position: $fixed;
         top: 0;
         left: 0;
-        margin-bottom: $margin03;
+        z-index: 10000;
         //check 
         @include flex-property(row, space-between);
         padding-left: 20px;
         .menu{
+            // SIDEBAR CSS
+            .sidebar {
+                height: 100%;
+                width: $percent30;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: $header-color;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+                z-index: 100;
+                a {
+                    padding: 8px 8px 8px 32px;
+                    text-decoration: none;
+                    font-size: 25px;
+                    color: #818181;
+                    display: block;
+                    transition: 0.3s;
+                    &:hover {
+                        color: #f1f1f1;
+                    }
+                }
+                .closebtn {
+                    position: absolute;
+                    top: 0;
+                    right: 25px;
+                    font-size: 36px;
+                    margin-left: 50px;
+                }
+                .navbar-nav{
+                    display: $flex;
+                    @include flex-property(column, flex-start);
+                    .dropdown-toggle{
+                        &::after{
+                            color: $yellow-color;
+                        }
+                    }
+                }
+              }
+            //   //SIDEBAR CSS END
             .burger-icon{
                 font-size: 1.5em;
             }
@@ -100,6 +137,7 @@ body{
     main{
         width: $percent90;
         margin: auto;
+        margin-top: 100px;
         .slider{
             width: $percent100;
             margin-bottom: $margin03;
@@ -271,53 +309,36 @@ body{
         @include flex-align(flex-start, center);
         background: $header-color;
         box-shadow: 0 0 20px $color-shadow;
-        .events-slider{
-            width: 100%;
-            height: 100%;
-            .post-slider{
+        .card{
+            @include position(relative);
+            .post-imageover{
                 width: 100%;
-                height: 100%;
-                display: inline-block;
-                padding: 0 10px;
-                .next, .prev{
-                    font-size: 2em;
-                    color: $yellow-color;
-                }
-                .post-wrapper{
-                    width: 90%;
-                    height: 100%;
-                    display: $flex;
-                    @include flex-property(row, space-between);
-                    flex-wrap: wrap;
-                    margin: 0 auto;
-                    overflow: hidden;
-                    .post{
-                        width: 30%;
-                        height: 100%;
-                        margin: 0 10px;
-                        .card{
-                            @include position(relative);
-                            .post-imageover{
-                                width: 100%;
-                                background: $color-gray-opacity;
-                                display: $flex;
-                                @include flex-property(row, space-between);
-                                @include flex-align(center, center);
-                                @include position(absolute);
-                                @include position-change($percent80, 0);
-                                color: $header-color;
-                                .post-rect{
-                                    width: 14px;
-                                    height: 50px;
-                                    background: $yellow-color;
-                                    margin-right: $margin-5;
-                                }
-                            }
-                        }
-                    }
+                background: $color-gray-opacity;
+                display: $flex;
+                @include flex-property(row, space-between);
+                @include flex-align(center, center);
+                @include position(absolute);
+                @include position-change($percent80, 0);
+                color: $header-color;
+                .post-rect{
+                    width: 14px;
+                    height: 50px;
+                    background: $yellow-color;
+                    margin-right: $margin-5;
                 }
             }
-            
+        }
+        .left-caret-pos{
+            color: $yellow-color;
+            font-size: 5em;
+            @include position(relative);
+            @include position-change(0, -$percent80);
+        }
+        .right-caret-pos{
+            color: $yellow-color;
+            font-size: 5em;
+            @include position(relative);
+            @include position-change(0, $percent80);
         }
         .yellow-rect{
             width: 200px;
@@ -326,18 +347,22 @@ body{
             
         }
     }
-    .one-slider{
-        width: $percent100;
-        .post-wrapper{
-            width: $percent60;
-            display: inline-block;
-            overflow: hidden;
-            .one-post{
-                width: $percent100;
-                height: 250px;
-                display: inline-block;
-                background: red;
-                margin: auto;
+    .one-post-slider{
+        margin: $margin03 0;
+        .card-info{
+            width: 700px;
+            text-align: center;
+            margin: auto;
+            background: $header-color;
+            box-shadow: 5px 5px 20px $color-shadow;
+            .title{
+                p{
+                    padding-top: $margin03;
+                }
+            }
+            >div{
+                
+                padding-bottom: $margin03;
             }
         }
     }
@@ -348,6 +373,7 @@ body{
         margin-bottom: $margin03;
         display: $flex;
         @include flex-property(row, space-between);
+        @include flex-align(center, center);
         .form-control{
             height: 50px;
             &::placeholder{

@@ -37,9 +37,22 @@ $(document).ready(function(){
           }
         ]
   });
+  $('#quote-carousel').carousel({
+    pause: false,
+    autoplay: true,
+    interval: 4000,
+  });
   
 });
-$('.owl-carousel').owlCarousel();
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("burger-icon").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("burger-icon").style.marginLeft= "0";
+}
 // $(document).ready(function(){
 //     $('.menu-toggle').on('click', function(){
 //         $('.nav').toggleClass('showing');

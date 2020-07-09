@@ -1,10 +1,24 @@
 
-@media (max-width: 1200px){
+// @media (max-width: 1200px){
 
-}
+// }
 
 @media (max-width: 1024px){
     body{
+        header{
+            .menu{
+                .menu-options{
+                    margin-left: 0;
+                    .none{
+                        display: none;
+                    }
+                }
+            }
+            
+            .options>div:not(#cart){
+                display: none;
+            }
+        }
         main{
             .slider{
                 flex-wrap: wrap;
@@ -43,19 +57,90 @@
             }
         }
         .post-slider-section{
-            .post-imageover{
-                top: 60%;
-                p{
-                    font-size: $font-14;
-                }
+            .left-caret-pos, .right-caret-pos{
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width: 800px){
+    body{
+        footer{
+            >div{
+                width: 100%;
+            }
+            height: 300px;
+            @include flex-property(column, flex-start);
+            @include flex-align(center, center);
+            h3{
+                text-align: center;
+                margin: $margin-bottom10 0;
+            }
+            .bottom{
+                font-size: $font-12;
+                text-align: center;
+            }
+            .contact{
+                @include flex-align(center, center);
+            }
+            .top{
+                text-align: center;
             }
         }
     }
 }
 
-
-@media (max-width: 1000px){
-}
-@media (max-width: 768px){
-
+@media (max-width: 480px){
+    body{
+        
+        .banner{
+            .banner-content{
+                img{
+                    min-height: 300px;
+                }
+                .banner-text{
+                    .type-buttons{
+                        display: $flex;
+                        @include flex-property(column, flex-start);
+                    }
+                }
+            }
+        }
+        .post-slider-section{
+            // .carousel-inner{
+            //     >div{
+            //         display: $flex;
+            //         @include flex-property(column, flex-start);
+            //     }
+            // }
+            .card{
+                .post-imageover{
+                    font-size: 0.5em;
+                    top: $percent60;
+                }
+            }
+            
+        }
+        .one-post-slider{
+            .card-info{
+                width: 300px;
+            }
+            
+            p{
+                font-size: $font-12;
+            }
+        }
+        .input{
+            .input-group-append, .input-group-text{
+                width: $percent100;
+            }
+            ::placeholder{
+                font-size: 0.7em;
+            }
+            display: $flex;
+            @include flex-property(column, flex-start);
+            @include flex-align(center, center);
+        }
+        
+    }
 }
