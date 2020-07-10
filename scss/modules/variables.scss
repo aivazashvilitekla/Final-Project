@@ -28,6 +28,7 @@ $margin-5 : 5px;
 $margin02 : 8px;
 $margin03 : 30px;
 $margin-bottom10 : 10px;
+$margin100: 100px;
 
 //box shadow
 $shadow: 0 0 20px 2px rgb(187, 187, 187);
@@ -51,4 +52,36 @@ $fixed : fixed;
 @mixin position-change($top, $left) {
     top: $top;
     left: $left;
+}
+
+
+// Classes
+.upArrow{
+    background: $header-color;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: $flex;
+    @include flex-align(center, center);
+    box-shadow: 0 0 20px $color-shadow;
+}
+
+.priceInfo{
+    display: $flex;
+    @include flex-property(column, space-between);
+    p{
+        color: $color-gray;
+        &:nth-child(2){
+            color: $yellow-color;
+        }
+        text-align: end;
+    }
+    .price-p{
+        &::before{
+            content: '487 ლ ';
+            color: $color-gray;
+            text-decoration: line-through;
+            text-decoration-color: $yellow-color;
+        }
+    }
 }

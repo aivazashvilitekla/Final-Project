@@ -6,7 +6,6 @@
  
 
 body{
-    
     background: $body-color;
     font-family: $font-nino;
     //Header
@@ -27,16 +26,15 @@ body{
             // SIDEBAR CSS
             .sidebar {
                 height: 100%;
-                width: $percent30;
+                width: 0;
                 position: fixed;
-                z-index: 1;
                 top: 0;
                 left: 0;
                 background-color: $header-color;
                 overflow-x: hidden;
                 transition: 0.5s;
                 padding-top: 60px;
-                z-index: 100;
+                z-index: 100001;
                 a {
                     padding: 8px 8px 8px 32px;
                     text-decoration: none;
@@ -58,6 +56,9 @@ body{
                 .navbar-nav{
                     display: $flex;
                     @include flex-property(column, flex-start);
+                    .dispNone{
+                        visibility: hidden;
+                    }
                     .dropdown-toggle{
                         &::after{
                             color: $yellow-color;
@@ -137,7 +138,7 @@ body{
     main{
         width: $percent90;
         margin: auto;
-        margin-top: 100px;
+        margin-top: $margin100;
         .slider{
             width: $percent100;
             margin-bottom: $margin03;
@@ -243,23 +244,7 @@ body{
                             color: $color-gray;
                         }
                         .price{
-                            display: $flex;
-                            @include flex-property(column, space-between);
-                            p{
-                                color: $color-gray;
-                                &:nth-child(2){
-                                    color: $yellow-color;
-                                }
-                                text-align: end;
-                            }
-                            .price-p{
-                                &::before{
-                                    content: '487ლ ';
-                                    color: $color-gray;
-                                    text-decoration: line-through;
-                                    text-decoration-color: $yellow-color;
-                                }
-                            }
+                            @extend .priceInfo;
                         }
                     }
                 }
@@ -389,13 +374,7 @@ body{
             box-shadow: 0 0 20px $color-shadow;
         }
         .up-arrow{
-            background: $header-color;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: $flex;
-            @include flex-align(center, center);
-            box-shadow: 0 0 20px $color-shadow;
+            @extend .upArrow;
         }
     }
     footer{
@@ -451,5 +430,177 @@ body{
             }
         }
     }
+}
+
+
+//post styles
+// CAROUSEL
+.carousel {
+    position: relative;
+  }
+  .carousel-item img {
+    object-fit: cover;
+  }
+  #carousel-thumbs {
+    background: rgba(255,255,255,.3);
+    bottom: 0;
+    left: 0;
+    padding: 0 50px;
+    right: 0;
+  }
+  #carousel-thumbs img {
+    border: 5px solid transparent;
+    cursor: pointer;
+  }
+  #carousel-thumbs img:hover {
+    border-color: rgba(255,255,255,.3);
+  }
+  #carousel-thumbs .selected img {
+    border-color: #fff;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+  }
+  @media all and (max-width: 767px) {
+    .carousel-container #carousel-thumbs img {
+      border-width: 3px;
+    }
+  }
+  @media all and (min-width: 576px) {
+    .carousel-container #carousel-thumbs {
+      position: absolute;
+    }
+  }
+  @media all and (max-width: 576px) {
+    .carousel-container #carousel-thumbs {
+      background: #ccccce;
+    }
+  }
+
+
+
+//   POST
+.post-body{
+    section{
+        margin-top: $margin100;
+        display: $flex;
+        @include flex-property(row, center);
+        .post-left{
+            width: 40%;
+            margin-left: 5%;
+        }
+        .back{
+            .up-arrow{
+                @extend .upArrow;
+            }
+        }
+        .post-right{
+            .cloth-info{
+                >div, h5, h2{
+                    margin-bottom: $margin03;
+                }
+                h5{
+                    font-size: $font-12;
+                    color: $color-gray;
+                }
+                h2{
+                    font-family: $font-phone;
+                    font-size: $font-29;
+                }
+                .circles{
+                    display: $flex;
+                    >div{
+                        margin-right: $margin02;
+                    }
+                    .full{
+                        width: 15px;
+                        height: 15px;
+                        background: $yellow-color;
+                        border-radius: 50%;
+                    }
+                    .onlyBorder{
+                        width: 15px;
+                        height: 15px;
+                        border: 1px solid $yellow-color;
+                        border-radius: 50%;
+                    }
+                    p{
+                        font-size: $font-12;
+                        color: $yellow-color;
+                    }
+                }
+                .post-page-text{
+                    font-size: $font-16;
+                    color: $color-gray;
+                    p{
+                        margin: $margin02 0;
+                    }
+                }
+            }
+            .cloth-details{
+                margin-bottom: $margin03;
+                .sizes{
+                    display: $flex;
+                    a{
+                        >div{
+                            width: 40px;
+                            height: 30px;
+                            &:hover{
+                                border: 2px solid $yellow-color;
+                            }
+                            margin-right: $margin02;
+                            display: $flex;
+                            @include flex-align(center, center);
+                        }
+                    }
+                }
+                .colors{
+                    display: $flex;
+                    >div{
+                        margin-right: $margin02;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: $yellow-color;
+                    }
+                }
+            }
+            .cloth-buy{
+                display: $flex;
+                @include flex-property(row, space-between);
+                align-items: center;
+                .addToCart{
+                    display: $flex;
+                    @include flex-align(center, center);
+                    .rect{
+                        background: $yellow-color;
+                        .cart-text{
+                            padding: 10px;
+                            display: $flex;
+                            @include flex-property(row, space-between);
+                            @include flex-align(center, center);
+                            img{
+                                width: 1.5em;
+                                margin: $margin-5;
+                            }
+                        }
+                    }
+                    .save-icon{
+                        margin-left: 10px;
+                    }
+                }
+                .price{
+                    @extend .priceInfo;
+                    @include flex-property(column, flex-start);
+                    p{
+                        text-align: start;
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
 @import './main/media.scss';

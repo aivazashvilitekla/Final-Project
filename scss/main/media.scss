@@ -7,6 +7,13 @@
     body{
         header{
             .menu{
+                .sidebar{
+                    .navbar-nav{
+                        .dispNone{
+                            visibility: visible;
+                        }
+                    }
+                }
                 .menu-options{
                     margin-left: 0;
                     .none{
@@ -62,6 +69,25 @@
             }
         }
     }
+    .post-body{
+        section{
+            @include flex-property(column, center);
+            align-items: center;
+            .post-left{
+                width: $percent100;
+            }
+            .post-right{
+                padding: 5px;
+                .cloth-buy{
+                    @include flex-property(column, space-between);
+                }
+            }
+            >div{
+                margin-bottom: $margin-5;
+            }
+        }
+        
+    }
 }
 @media (max-width: 800px){
     body{
@@ -89,7 +115,6 @@
         }
     }
 }
-
 @media (max-width: 480px){
     body{
         
