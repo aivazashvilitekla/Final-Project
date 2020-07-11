@@ -1,10 +1,6 @@
 @import './basic/reset.scss';
 @import './basic/fonts.scss';
 @import './modules/variables.scss';
-@import './modules/classes.scss';
-@import './modules/mixins.scss';
- 
-
 body{
     background: $body-color;
     font-family: $font-nino;
@@ -317,13 +313,13 @@ body{
             color: $yellow-color;
             font-size: 5em;
             @include position(relative);
-            @include position-change(0, -$percent80);
+            @include position-change(0, -$percent95);
         }
         .right-caret-pos{
             color: $yellow-color;
             font-size: 5em;
             @include position(relative);
-            @include position-change(0, $percent80);
+            @include position-change(0, $percent95);
         }
         .yellow-rect{
             width: 200px;
@@ -368,6 +364,7 @@ body{
         #basic-addon2{
             background: $yellow-color;
             color: $header-color;
+            width: 100%;
         }
         .input-group{
             width: $percent95;
@@ -431,8 +428,6 @@ body{
         }
     }
 }
-
-
 //post styles
 // CAROUSEL
 .carousel {
@@ -477,9 +472,6 @@ body{
       background: #ccccce;
     }
   }
-
-
-
 //   POST
 .post-body{
     section{

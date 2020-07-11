@@ -352,13 +352,13 @@ body {
       font-size: 5em;
       position: relative;
       top: 0;
-      left: -80%; }
+      left: -95%; }
     body .post-slider-section .right-caret-pos {
       color: #FEC21E;
       font-size: 5em;
       position: relative;
       top: 0;
-      left: 80%; }
+      left: 95%; }
     body .post-slider-section .yellow-rect {
       width: 200px;
       height: 5px;
@@ -391,7 +391,8 @@ body {
         color: #E1E1E1; }
     body .input #basic-addon2 {
       background: #FEC21E;
-      color: white; }
+      color: white;
+      width: 100%; }
     body .input .input-group {
       width: 95%;
       box-shadow: 0 0 20px #cacaca; }
