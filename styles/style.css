@@ -79,7 +79,8 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 20px #cacaca; }
+  box-shadow: 0 0 20px #cacaca;
+  margin-left: 50px; }
 
 .priceInfo, body main .posts .post .card .card-body .price, .post-body section .post-right .cloth-buy .price {
   display: flex;
@@ -469,14 +470,19 @@ body {
   width: 50px; }
 
 @media all and (max-width: 767px) {
+  body .post-slider-section .card .post-imageover{
+    font-size: 0.5em;
+  }
   .carousel-container #carousel-thumbs img {
     border-width: 3px; } }
 
 @media all and (min-width: 576px) {
+  
   .carousel-container #carousel-thumbs {
     position: absolute; } }
 
 @media all and (max-width: 576px) {
+  
   .carousel-container #carousel-thumbs {
     background: #ccccce; } }
 
@@ -612,6 +618,12 @@ body {
       margin-bottom: 5px; } }
 
 @media (max-width: 800px) {
+  body .banner .banner-content img {
+    min-height: 300px; }
+  body .banner .banner-content .banner-text .type-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
   body footer {
     height: 300px;
     flex-direction: column;
@@ -633,6 +645,9 @@ body {
       text-align: center; } }
 
 @media (max-width: 480px) {
+  body .input .up-arrow{
+    margin-left: 0;
+  }
   body .banner .banner-content img {
     min-height: 300px; }
   body .banner .banner-content .banner-text .type-buttons {
